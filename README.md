@@ -15,12 +15,9 @@ The REST API documentation can be found on [docs.hubmap-entity.com](https://docs
 ## Installation
 
 ```sh
-# install from the production repo
-pip install git+ssh://git@github.com/yuanzhou/test-sdk.git
+# install from PyPI
+pip install --pre hubmap_entity
 ```
-
-> [!NOTE]
-> Once this package is [published to PyPI](https://app.stainlessapi.com/docs/guides/publish), this will become: `pip install --pre hubmap_entity`
 
 ## Usage
 
