@@ -72,14 +72,6 @@ from .retrieve_descendants import (
     RetrieveDescendantsResourceWithStreamingResponse,
     AsyncRetrieveDescendantsResourceWithStreamingResponse,
 )
-from .retrieve_samples_provenance_info import (
-    RetrieveSamplesProvenanceInfoResource,
-    AsyncRetrieveSamplesProvenanceInfoResource,
-    RetrieveSamplesProvenanceInfoResourceWithRawResponse,
-    AsyncRetrieveSamplesProvenanceInfoResourceWithRawResponse,
-    RetrieveSamplesProvenanceInfoResourceWithStreamingResponse,
-    AsyncRetrieveSamplesProvenanceInfoResourceWithStreamingResponse,
-)
 
 __all__ = [
     "EntitiesResource",
@@ -130,12 +122,6 @@ __all__ = [
     "AsyncUpdateUploadsBulkResourceWithRawResponse",
     "UpdateUploadsBulkResourceWithStreamingResponse",
     "AsyncUpdateUploadsBulkResourceWithStreamingResponse",
-    "RetrieveSamplesProvenanceInfoResource",
-    "AsyncRetrieveSamplesProvenanceInfoResource",
-    "RetrieveSamplesProvenanceInfoResourceWithRawResponse",
-    "AsyncRetrieveSamplesProvenanceInfoResourceWithRawResponse",
-    "RetrieveSamplesProvenanceInfoResourceWithStreamingResponse",
-    "AsyncRetrieveSamplesProvenanceInfoResourceWithStreamingResponse",
     "DatasetsResource",
     "AsyncDatasetsResource",
     "DatasetsResourceWithRawResponse",

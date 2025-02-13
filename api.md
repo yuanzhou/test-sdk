@@ -11,7 +11,6 @@ Types:
 ```python
 from hubmap_entity.types import (
     Instanceof,
-    EntityCreateResponse,
     EntityRetrieveResponse,
     EntityUpdateResponse,
     EntityCreateMultipleSamplesResponse,
@@ -26,7 +25,6 @@ from hubmap_entity.types import (
 
 Methods:
 
-- <code title="post /entities/new/{entity_type}">client.entities.<a href="./src/hubmap_entity/resources/entities.py">create</a>(entity_type, \*\*<a href="src/hubmap_entity/types/entity_create_params.py">params</a>) -> <a href="./src/hubmap_entity/types/entity_create_response.py">EntityCreateResponse</a></code>
 - <code title="get /entities/{id}">client.entities.<a href="./src/hubmap_entity/resources/entities.py">retrieve</a>(id) -> <a href="./src/hubmap_entity/types/entity_retrieve_response.py">EntityRetrieveResponse</a></code>
 - <code title="put /entities/{id}">client.entities.<a href="./src/hubmap_entity/resources/entities.py">update</a>(id, \*\*<a href="src/hubmap_entity/types/entity_update_params.py">params</a>) -> <a href="./src/hubmap_entity/types/entity_update_response.py">EntityUpdateResponse</a></code>
 - <code title="post /entities/multiple-samples/{count}">client.entities.<a href="./src/hubmap_entity/resources/entities.py">create_multiple_samples</a>(count) -> <a href="./src/hubmap_entity/types/entity_create_multiple_samples_response.py">EntityCreateMultipleSamplesResponse</a></code>
@@ -118,18 +116,6 @@ Methods:
 
 - <code title="put /uploads">client.update_uploads_bulk.<a href="./src/hubmap_entity/resources/update_uploads_bulk.py">update_uploads_bulk</a>(\*\*<a href="src/hubmap_entity/types/update_uploads_bulk_update_uploads_bulk_params.py">params</a>) -> <a href="./src/hubmap_entity/types/update_uploads_bulk_update_uploads_bulk_response.py">UpdateUploadsBulkUpdateUploadsBulkResponse</a></code>
 
-# RetrieveSamplesProvenanceInfo
-
-Types:
-
-```python
-from hubmap_entity.types import RetrieveSamplesProvenanceInfoRetrieveSamplesProvenanceInfoResponse
-```
-
-Methods:
-
-- <code title="get /samples/prov-info">client.retrieve_samples_provenance_info.<a href="./src/hubmap_entity/resources/retrieve_samples_provenance_info.py">retrieve_samples_provenance_info</a>(\*\*<a href="src/hubmap_entity/types/retrieve_samples_provenance_info_retrieve_samples_provenance_info_params.py">params</a>) -> <a href="./src/hubmap_entity/types/retrieve_samples_provenance_info_retrieve_samples_provenance_info_response.py">RetrieveSamplesProvenanceInfoRetrieveSamplesProvenanceInfoResponse</a></code>
-
 # Datasets
 
 Types:
@@ -142,7 +128,6 @@ from hubmap_entity.types import (
     DatasetListOrgansResponse,
     DatasetListSamplesResponse,
     DatasetListUnpublishedResponse,
-    DatasetRetrieveMultiRevisionsResponse,
     DatasetRetrievePairedDatasetResponse,
     DatasetRetrieveProvMetadataResponse,
     DatasetRetrieveRevisionsResponse,
@@ -160,7 +145,6 @@ Methods:
 - <code title="get /datasets/unpublished">client.datasets.<a href="./src/hubmap_entity/resources/datasets/datasets.py">list_unpublished</a>(\*\*<a href="src/hubmap_entity/types/dataset_list_unpublished_params.py">params</a>) -> <a href="./src/hubmap_entity/types/dataset_list_unpublished_response.py">DatasetListUnpublishedResponse</a></code>
 - <code title="put /datasets/{id}/retract">client.datasets.<a href="./src/hubmap_entity/resources/datasets/datasets.py">retract</a>(id, \*\*<a href="src/hubmap_entity/types/dataset_retract_params.py">params</a>) -> None</code>
 - <code title="get /datasets/{id}/latest-revision">client.datasets.<a href="./src/hubmap_entity/resources/datasets/datasets.py">retrieve_latest_revision</a>(id) -> <a href="./src/hubmap_entity/types/shared/dataset.py">Dataset</a></code>
-- <code title="get /datasets/{id}/multi-revisions">client.datasets.<a href="./src/hubmap_entity/resources/datasets/datasets.py">retrieve_multi_revisions</a>(id, \*\*<a href="src/hubmap_entity/types/dataset_retrieve_multi_revisions_params.py">params</a>) -> <a href="./src/hubmap_entity/types/dataset_retrieve_multi_revisions_response.py">DatasetRetrieveMultiRevisionsResponse</a></code>
 - <code title="get /datasets/{id}/paired-dataset">client.datasets.<a href="./src/hubmap_entity/resources/datasets/datasets.py">retrieve_paired_dataset</a>(id, \*\*<a href="src/hubmap_entity/types/dataset_retrieve_paired_dataset_params.py">params</a>) -> <a href="./src/hubmap_entity/types/dataset_retrieve_paired_dataset_response.py">DatasetRetrievePairedDatasetResponse</a></code>
 - <code title="get /datasets/{id}/prov-metadata">client.datasets.<a href="./src/hubmap_entity/resources/datasets/datasets.py">retrieve_prov_metadata</a>(id) -> <a href="./src/hubmap_entity/types/dataset_retrieve_prov_metadata_response.py">DatasetRetrieveProvMetadataResponse</a></code>
 - <code title="get /datasets/{id}/revision">client.datasets.<a href="./src/hubmap_entity/resources/datasets/datasets.py">retrieve_revision</a>(id) -> None</code>
@@ -172,10 +156,9 @@ Methods:
 Types:
 
 ```python
-from hubmap_entity.types.datasets import ProvInfoRetrieveResponse, ProvInfoListAllResponse
+from hubmap_entity.types.datasets import ProvInfoRetrieveResponse
 ```
 
 Methods:
 
 - <code title="get /datasets/{id}/prov-info">client.datasets.prov_info.<a href="./src/hubmap_entity/resources/datasets/prov_info.py">retrieve</a>(id, \*\*<a href="src/hubmap_entity/types/datasets/prov_info_retrieve_params.py">params</a>) -> <a href="./src/hubmap_entity/types/datasets/prov_info_retrieve_response.py">ProvInfoRetrieveResponse</a></code>
-- <code title="get /datasets/prov-info">client.datasets.prov_info.<a href="./src/hubmap_entity/resources/datasets/prov_info.py">list_all</a>(\*\*<a href="src/hubmap_entity/types/datasets/prov_info_list_all_params.py">params</a>) -> <a href="./src/hubmap_entity/types/datasets/prov_info_list_all_response.py">ProvInfoListAllResponse</a></code>

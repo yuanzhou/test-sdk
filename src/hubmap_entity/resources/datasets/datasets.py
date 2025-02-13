@@ -13,7 +13,6 @@ from ...types import (
     dataset_create_components_params,
     dataset_retrieve_revisions_params,
     dataset_retrieve_paired_dataset_params,
-    dataset_retrieve_multi_revisions_params,
 )
 from ..._types import NOT_GIVEN, Body, Query, Headers, NoneType, NotGiven
 from ..._utils import (
@@ -49,7 +48,6 @@ from ...types.dataset_retrieve_revisions_response import DatasetRetrieveRevision
 from ...types.dataset_retrieve_sankey_data_response import DatasetRetrieveSankeyDataResponse
 from ...types.dataset_retrieve_prov_metadata_response import DatasetRetrieveProvMetadataResponse
 from ...types.dataset_retrieve_paired_dataset_response import DatasetRetrievePairedDatasetResponse
-from ...types.dataset_retrieve_multi_revisions_response import DatasetRetrieveMultiRevisionsResponse
 
 __all__ = ["DatasetsResource", "AsyncDatasetsResource"]
 
@@ -65,7 +63,7 @@ class DatasetsResource(SyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/hubmap-entity-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/yuanzhou/test-sdk#accessing-raw-response-data-eg-headers
         """
         return DatasetsResourceWithRawResponse(self)
 
@@ -74,7 +72,7 @@ class DatasetsResource(SyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/hubmap-entity-python#with_streaming_response
+        For more information, see https://www.github.com/yuanzhou/test-sdk#with_streaming_response
         """
         return DatasetsResourceWithStreamingResponse(self)
 
@@ -384,57 +382,6 @@ class DatasetsResource(SyncAPIResource):
             cast_to=SharedDataset,
         )
 
-    def retrieve_multi_revisions(
-        self,
-        id: str,
-        *,
-        include_dataset: Literal["true", "false"] | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> DatasetRetrieveMultiRevisionsResponse:
-        """
-        Retrieve a list of all multi revisions of a dataset from the id of any dataset
-        in the chain. E.g: If there are 5 revisions, and the id for revision 4 is given,
-        a list of revisions 1-5 will be returned in reverse order (newest first).
-        Non-public access is only required to retrieve information on non-published
-        datasets. Output will be a list of dictionaries. Each dictionary contains the
-        dataset revision number and its list of uuids. Optionally, the full dataset can
-        be included for each.
-
-        Args:
-          include_dataset: A case insensitive string. Any value besides true will have no effect. If the
-              string is 'true', the full dataset for each revision will be included in the
-              response
-
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
-        return self._get(
-            f"/datasets/{id}/multi-revisions",
-            options=make_request_options(
-                extra_headers=extra_headers,
-                extra_query=extra_query,
-                extra_body=extra_body,
-                timeout=timeout,
-                query=maybe_transform(
-                    {"include_dataset": include_dataset},
-                    dataset_retrieve_multi_revisions_params.DatasetRetrieveMultiRevisionsParams,
-                ),
-            ),
-            cast_to=DatasetRetrieveMultiRevisionsResponse,
-        )
-
     def retrieve_paired_dataset(
         self,
         id: str,
@@ -649,7 +596,7 @@ class AsyncDatasetsResource(AsyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/hubmap-entity-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/yuanzhou/test-sdk#accessing-raw-response-data-eg-headers
         """
         return AsyncDatasetsResourceWithRawResponse(self)
 
@@ -658,7 +605,7 @@ class AsyncDatasetsResource(AsyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/hubmap-entity-python#with_streaming_response
+        For more information, see https://www.github.com/yuanzhou/test-sdk#with_streaming_response
         """
         return AsyncDatasetsResourceWithStreamingResponse(self)
 
@@ -972,57 +919,6 @@ class AsyncDatasetsResource(AsyncAPIResource):
             cast_to=SharedDataset,
         )
 
-    async def retrieve_multi_revisions(
-        self,
-        id: str,
-        *,
-        include_dataset: Literal["true", "false"] | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> DatasetRetrieveMultiRevisionsResponse:
-        """
-        Retrieve a list of all multi revisions of a dataset from the id of any dataset
-        in the chain. E.g: If there are 5 revisions, and the id for revision 4 is given,
-        a list of revisions 1-5 will be returned in reverse order (newest first).
-        Non-public access is only required to retrieve information on non-published
-        datasets. Output will be a list of dictionaries. Each dictionary contains the
-        dataset revision number and its list of uuids. Optionally, the full dataset can
-        be included for each.
-
-        Args:
-          include_dataset: A case insensitive string. Any value besides true will have no effect. If the
-              string is 'true', the full dataset for each revision will be included in the
-              response
-
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
-        return await self._get(
-            f"/datasets/{id}/multi-revisions",
-            options=make_request_options(
-                extra_headers=extra_headers,
-                extra_query=extra_query,
-                extra_body=extra_body,
-                timeout=timeout,
-                query=await async_maybe_transform(
-                    {"include_dataset": include_dataset},
-                    dataset_retrieve_multi_revisions_params.DatasetRetrieveMultiRevisionsParams,
-                ),
-            ),
-            cast_to=DatasetRetrieveMultiRevisionsResponse,
-        )
-
     async def retrieve_paired_dataset(
         self,
         id: str,
@@ -1254,9 +1150,6 @@ class DatasetsResourceWithRawResponse:
         self.retrieve_latest_revision = to_raw_response_wrapper(
             datasets.retrieve_latest_revision,
         )
-        self.retrieve_multi_revisions = to_raw_response_wrapper(
-            datasets.retrieve_multi_revisions,
-        )
         self.retrieve_paired_dataset = to_raw_response_wrapper(
             datasets.retrieve_paired_dataset,
         )
@@ -1305,9 +1198,6 @@ class AsyncDatasetsResourceWithRawResponse:
         )
         self.retrieve_latest_revision = async_to_raw_response_wrapper(
             datasets.retrieve_latest_revision,
-        )
-        self.retrieve_multi_revisions = async_to_raw_response_wrapper(
-            datasets.retrieve_multi_revisions,
         )
         self.retrieve_paired_dataset = async_to_raw_response_wrapper(
             datasets.retrieve_paired_dataset,
@@ -1358,9 +1248,6 @@ class DatasetsResourceWithStreamingResponse:
         self.retrieve_latest_revision = to_streamed_response_wrapper(
             datasets.retrieve_latest_revision,
         )
-        self.retrieve_multi_revisions = to_streamed_response_wrapper(
-            datasets.retrieve_multi_revisions,
-        )
         self.retrieve_paired_dataset = to_streamed_response_wrapper(
             datasets.retrieve_paired_dataset,
         )
@@ -1409,9 +1296,6 @@ class AsyncDatasetsResourceWithStreamingResponse:
         )
         self.retrieve_latest_revision = async_to_streamed_response_wrapper(
             datasets.retrieve_latest_revision,
-        )
-        self.retrieve_multi_revisions = async_to_streamed_response_wrapper(
-            datasets.retrieve_multi_revisions,
         )
         self.retrieve_paired_dataset = async_to_streamed_response_wrapper(
             datasets.retrieve_paired_dataset,
