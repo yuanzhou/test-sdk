@@ -33,7 +33,6 @@ from .resources import (
     retrieve_ancestors,
     update_uploads_bulk,
     retrieve_descendants,
-    retrieve_samples_provenance_info,
 )
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError, HubmapEntityError
@@ -65,7 +64,6 @@ class HubmapEntity(SyncAPIClient):
     retrieve_children: retrieve_children.RetrieveChildrenResource
     redirect_doi: redirect_doi.RedirectDoiResource
     update_uploads_bulk: update_uploads_bulk.UpdateUploadsBulkResource
-    retrieve_samples_provenance_info: retrieve_samples_provenance_info.RetrieveSamplesProvenanceInfoResource
     datasets: datasets.DatasetsResource
     with_raw_response: HubmapEntityWithRawResponse
     with_streaming_response: HubmapEntityWithStreamedResponse
@@ -132,9 +130,6 @@ class HubmapEntity(SyncAPIClient):
         self.retrieve_children = retrieve_children.RetrieveChildrenResource(self)
         self.redirect_doi = redirect_doi.RedirectDoiResource(self)
         self.update_uploads_bulk = update_uploads_bulk.UpdateUploadsBulkResource(self)
-        self.retrieve_samples_provenance_info = retrieve_samples_provenance_info.RetrieveSamplesProvenanceInfoResource(
-            self
-        )
         self.datasets = datasets.DatasetsResource(self)
         self.with_raw_response = HubmapEntityWithRawResponse(self)
         self.with_streaming_response = HubmapEntityWithStreamedResponse(self)
@@ -247,7 +242,6 @@ class AsyncHubmapEntity(AsyncAPIClient):
     retrieve_children: retrieve_children.AsyncRetrieveChildrenResource
     redirect_doi: redirect_doi.AsyncRedirectDoiResource
     update_uploads_bulk: update_uploads_bulk.AsyncUpdateUploadsBulkResource
-    retrieve_samples_provenance_info: retrieve_samples_provenance_info.AsyncRetrieveSamplesProvenanceInfoResource
     datasets: datasets.AsyncDatasetsResource
     with_raw_response: AsyncHubmapEntityWithRawResponse
     with_streaming_response: AsyncHubmapEntityWithStreamedResponse
@@ -314,9 +308,6 @@ class AsyncHubmapEntity(AsyncAPIClient):
         self.retrieve_children = retrieve_children.AsyncRetrieveChildrenResource(self)
         self.redirect_doi = redirect_doi.AsyncRedirectDoiResource(self)
         self.update_uploads_bulk = update_uploads_bulk.AsyncUpdateUploadsBulkResource(self)
-        self.retrieve_samples_provenance_info = (
-            retrieve_samples_provenance_info.AsyncRetrieveSamplesProvenanceInfoResource(self)
-        )
         self.datasets = datasets.AsyncDatasetsResource(self)
         self.with_raw_response = AsyncHubmapEntityWithRawResponse(self)
         self.with_streaming_response = AsyncHubmapEntityWithStreamedResponse(self)
@@ -434,11 +425,6 @@ class HubmapEntityWithRawResponse:
         self.update_uploads_bulk = update_uploads_bulk.UpdateUploadsBulkResourceWithRawResponse(
             client.update_uploads_bulk
         )
-        self.retrieve_samples_provenance_info = (
-            retrieve_samples_provenance_info.RetrieveSamplesProvenanceInfoResourceWithRawResponse(
-                client.retrieve_samples_provenance_info
-            )
-        )
         self.datasets = datasets.DatasetsResourceWithRawResponse(client.datasets)
 
 
@@ -459,11 +445,6 @@ class AsyncHubmapEntityWithRawResponse:
         self.redirect_doi = redirect_doi.AsyncRedirectDoiResourceWithRawResponse(client.redirect_doi)
         self.update_uploads_bulk = update_uploads_bulk.AsyncUpdateUploadsBulkResourceWithRawResponse(
             client.update_uploads_bulk
-        )
-        self.retrieve_samples_provenance_info = (
-            retrieve_samples_provenance_info.AsyncRetrieveSamplesProvenanceInfoResourceWithRawResponse(
-                client.retrieve_samples_provenance_info
-            )
         )
         self.datasets = datasets.AsyncDatasetsResourceWithRawResponse(client.datasets)
 
@@ -487,11 +468,6 @@ class HubmapEntityWithStreamedResponse:
         self.redirect_doi = redirect_doi.RedirectDoiResourceWithStreamingResponse(client.redirect_doi)
         self.update_uploads_bulk = update_uploads_bulk.UpdateUploadsBulkResourceWithStreamingResponse(
             client.update_uploads_bulk
-        )
-        self.retrieve_samples_provenance_info = (
-            retrieve_samples_provenance_info.RetrieveSamplesProvenanceInfoResourceWithStreamingResponse(
-                client.retrieve_samples_provenance_info
-            )
         )
         self.datasets = datasets.DatasetsResourceWithStreamingResponse(client.datasets)
 
@@ -517,11 +493,6 @@ class AsyncHubmapEntityWithStreamedResponse:
         self.redirect_doi = redirect_doi.AsyncRedirectDoiResourceWithStreamingResponse(client.redirect_doi)
         self.update_uploads_bulk = update_uploads_bulk.AsyncUpdateUploadsBulkResourceWithStreamingResponse(
             client.update_uploads_bulk
-        )
-        self.retrieve_samples_provenance_info = (
-            retrieve_samples_provenance_info.AsyncRetrieveSamplesProvenanceInfoResourceWithStreamingResponse(
-                client.retrieve_samples_provenance_info
-            )
         )
         self.datasets = datasets.AsyncDatasetsResourceWithStreamingResponse(client.datasets)
 

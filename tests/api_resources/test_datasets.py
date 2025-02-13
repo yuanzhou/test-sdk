@@ -20,7 +20,6 @@ from hubmap_entity.types import (
     DatasetRetrieveSankeyDataResponse,
     DatasetRetrieveProvMetadataResponse,
     DatasetRetrievePairedDatasetResponse,
-    DatasetRetrieveMultiRevisionsResponse,
 )
 from hubmap_entity.types.shared import Dataset
 
@@ -419,57 +418,6 @@ class TestDatasets:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             client.datasets.with_raw_response.retrieve_latest_revision(
                 "",
-            )
-
-    @pytest.mark.skip()
-    @parametrize
-    def test_method_retrieve_multi_revisions(self, client: HubmapEntity) -> None:
-        dataset = client.datasets.retrieve_multi_revisions(
-            id="id",
-        )
-        assert_matches_type(DatasetRetrieveMultiRevisionsResponse, dataset, path=["response"])
-
-    @pytest.mark.skip()
-    @parametrize
-    def test_method_retrieve_multi_revisions_with_all_params(self, client: HubmapEntity) -> None:
-        dataset = client.datasets.retrieve_multi_revisions(
-            id="id",
-            include_dataset="true",
-        )
-        assert_matches_type(DatasetRetrieveMultiRevisionsResponse, dataset, path=["response"])
-
-    @pytest.mark.skip()
-    @parametrize
-    def test_raw_response_retrieve_multi_revisions(self, client: HubmapEntity) -> None:
-        response = client.datasets.with_raw_response.retrieve_multi_revisions(
-            id="id",
-        )
-
-        assert response.is_closed is True
-        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-        dataset = response.parse()
-        assert_matches_type(DatasetRetrieveMultiRevisionsResponse, dataset, path=["response"])
-
-    @pytest.mark.skip()
-    @parametrize
-    def test_streaming_response_retrieve_multi_revisions(self, client: HubmapEntity) -> None:
-        with client.datasets.with_streaming_response.retrieve_multi_revisions(
-            id="id",
-        ) as response:
-            assert not response.is_closed
-            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-
-            dataset = response.parse()
-            assert_matches_type(DatasetRetrieveMultiRevisionsResponse, dataset, path=["response"])
-
-        assert cast(Any, response.is_closed) is True
-
-    @pytest.mark.skip()
-    @parametrize
-    def test_path_params_retrieve_multi_revisions(self, client: HubmapEntity) -> None:
-        with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
-            client.datasets.with_raw_response.retrieve_multi_revisions(
-                id="",
             )
 
     @pytest.mark.skip()
@@ -1084,57 +1032,6 @@ class TestAsyncDatasets:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             await async_client.datasets.with_raw_response.retrieve_latest_revision(
                 "",
-            )
-
-    @pytest.mark.skip()
-    @parametrize
-    async def test_method_retrieve_multi_revisions(self, async_client: AsyncHubmapEntity) -> None:
-        dataset = await async_client.datasets.retrieve_multi_revisions(
-            id="id",
-        )
-        assert_matches_type(DatasetRetrieveMultiRevisionsResponse, dataset, path=["response"])
-
-    @pytest.mark.skip()
-    @parametrize
-    async def test_method_retrieve_multi_revisions_with_all_params(self, async_client: AsyncHubmapEntity) -> None:
-        dataset = await async_client.datasets.retrieve_multi_revisions(
-            id="id",
-            include_dataset="true",
-        )
-        assert_matches_type(DatasetRetrieveMultiRevisionsResponse, dataset, path=["response"])
-
-    @pytest.mark.skip()
-    @parametrize
-    async def test_raw_response_retrieve_multi_revisions(self, async_client: AsyncHubmapEntity) -> None:
-        response = await async_client.datasets.with_raw_response.retrieve_multi_revisions(
-            id="id",
-        )
-
-        assert response.is_closed is True
-        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-        dataset = await response.parse()
-        assert_matches_type(DatasetRetrieveMultiRevisionsResponse, dataset, path=["response"])
-
-    @pytest.mark.skip()
-    @parametrize
-    async def test_streaming_response_retrieve_multi_revisions(self, async_client: AsyncHubmapEntity) -> None:
-        async with async_client.datasets.with_streaming_response.retrieve_multi_revisions(
-            id="id",
-        ) as response:
-            assert not response.is_closed
-            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
-
-            dataset = await response.parse()
-            assert_matches_type(DatasetRetrieveMultiRevisionsResponse, dataset, path=["response"])
-
-        assert cast(Any, response.is_closed) is True
-
-    @pytest.mark.skip()
-    @parametrize
-    async def test_path_params_retrieve_multi_revisions(self, async_client: AsyncHubmapEntity) -> None:
-        with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
-            await async_client.datasets.with_raw_response.retrieve_multi_revisions(
-                id="",
             )
 
     @pytest.mark.skip()

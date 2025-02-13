@@ -4,10 +4,8 @@ from __future__ import annotations
 
 from .shared import Donor as Donor, Sample as Sample, Upload as Upload, Dataset as Dataset
 from .instanceof import Instanceof as Instanceof
-from .entity_create_params import EntityCreateParams as EntityCreateParams
 from .entity_update_params import EntityUpdateParams as EntityUpdateParams
 from .dataset_retract_params import DatasetRetractParams as DatasetRetractParams
-from .entity_create_response import EntityCreateResponse as EntityCreateResponse
 from .entity_update_response import EntityUpdateResponse as EntityUpdateResponse
 from .entity_retrieve_response import EntityRetrieveResponse as EntityRetrieveResponse
 from .dataset_bulk_update_params import DatasetBulkUpdateParams as DatasetBulkUpdateParams
@@ -37,9 +35,6 @@ from .dataset_retrieve_sankey_data_response import (
 from .dataset_retrieve_paired_dataset_params import (
     DatasetRetrievePairedDatasetParams as DatasetRetrievePairedDatasetParams,
 )
-from .dataset_retrieve_multi_revisions_params import (
-    DatasetRetrieveMultiRevisionsParams as DatasetRetrieveMultiRevisionsParams,
-)
 from .dataset_retrieve_prov_metadata_response import (
     DatasetRetrieveProvMetadataResponse as DatasetRetrieveProvMetadataResponse,
 )
@@ -48,9 +43,6 @@ from .entity_create_multiple_samples_response import (
 )
 from .dataset_retrieve_paired_dataset_response import (
     DatasetRetrievePairedDatasetResponse as DatasetRetrievePairedDatasetResponse,
-)
-from .dataset_retrieve_multi_revisions_response import (
-    DatasetRetrieveMultiRevisionsResponse as DatasetRetrieveMultiRevisionsResponse,
 )
 from .retrieve_child_retrieve_children_response import (
     RetrieveChildRetrieveChildrenResponse as RetrieveChildRetrieveChildrenResponse,
@@ -72,10 +64,4 @@ from .update_uploads_bulk_update_uploads_bulk_response import (
 )
 from .retrieve_descendant_retrieve_descendants_response import (
     RetrieveDescendantRetrieveDescendantsResponse as RetrieveDescendantRetrieveDescendantsResponse,
-)
-from .retrieve_samples_provenance_info_retrieve_samples_provenance_info_params import (
-    RetrieveSamplesProvenanceInfoRetrieveSamplesProvenanceInfoParams as RetrieveSamplesProvenanceInfoRetrieveSamplesProvenanceInfoParams,
-)
-from .retrieve_samples_provenance_info_retrieve_samples_provenance_info_response import (
-    RetrieveSamplesProvenanceInfoRetrieveSamplesProvenanceInfoResponse as RetrieveSamplesProvenanceInfoRetrieveSamplesProvenanceInfoResponse,
 )

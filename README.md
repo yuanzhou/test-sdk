@@ -10,7 +10,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Documentation
 
-The REST API documentation can be found on [docs.hubmap-entity.com](https://docs.hubmap-entity.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [smart-api.info](https://smart-api.info/ui/0065e419668f3336a40d1f5ab89c6ba3). The full API of this library can be found in [api.md](api.md).
 
 ## Installation
 
