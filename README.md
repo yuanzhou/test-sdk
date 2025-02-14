@@ -31,7 +31,7 @@ client = HubmapEntity(
 )
 
 entity = client.entities.retrieve(
-    "REPLACE_ME",
+    "uuid or hubmap_id",
 )
 ```
 
@@ -50,7 +50,7 @@ client = AsyncHubmapEntity(
 
 async def main() -> None:
     entity = await client.entities.retrieve(
-        "REPLACE_ME",
+        "uuid or hubmap_id",
     )
 
 
@@ -81,13 +81,11 @@ All errors inherit from `hubmap_entity.APIError`.
 import hubmap_entity
 from hubmap_entity import HubmapEntity
 
-client = HubmapEntity(
-    bearer_token="My Bearer Token",
-)
+client = HubmapEntity()
 
 try:
     client.entities.retrieve(
-        "REPLACE_ME",
+        "uuid or hubmap_id",
     )
 except hubmap_entity.APIConnectionError as e:
     print("The server could not be reached")
@@ -128,12 +126,11 @@ from hubmap_entity import HubmapEntity
 client = HubmapEntity(
     # default is 2
     max_retries=0,
-    bearer_token="My Bearer Token",
 )
 
 # Or, configure per-request:
 client.with_options(max_retries=5).entities.retrieve(
-    "REPLACE_ME",
+    "uuid or hubmap_id",
 )
 ```
 
@@ -149,18 +146,16 @@ from hubmap_entity import HubmapEntity
 client = HubmapEntity(
     # 20 seconds (default is 1 minute)
     timeout=20.0,
-    bearer_token="My Bearer Token",
 )
 
 # More granular control:
 client = HubmapEntity(
     timeout=httpx.Timeout(60.0, read=5.0, write=10.0, connect=2.0),
-    bearer_token="My Bearer Token",
 )
 
 # Override per-request:
 client.with_options(timeout=5.0).entities.retrieve(
-    "REPLACE_ME",
+    "uuid or hubmap_id",
 )
 ```
 
@@ -201,11 +196,9 @@ The "raw" Response object can be accessed by prefixing `.with_raw_response.` to 
 ```py
 from hubmap_entity import HubmapEntity
 
-client = HubmapEntity(
-    bearer_token="My Bearer Token",
-)
+client = HubmapEntity()
 response = client.entities.with_raw_response.retrieve(
-    "REPLACE_ME",
+    "uuid or hubmap_id",
 )
 print(response.headers.get('X-My-Header'))
 
@@ -225,7 +218,7 @@ To stream the response body, use `.with_streaming_response` instead, which requi
 
 ```python
 with client.entities.with_streaming_response.retrieve(
-    "REPLACE_ME",
+    "uuid or hubmap_id",
 ) as response:
     print(response.headers.get("X-My-Header"))
 
@@ -288,7 +281,6 @@ client = HubmapEntity(
         proxy="http://my.test.proxy.example.com",
         transport=httpx.HTTPTransport(local_address="0.0.0.0"),
     ),
-    bearer_token="My Bearer Token",
 )
 ```
 
@@ -305,9 +297,7 @@ By default the library closes underlying HTTP connections whenever the client is
 ```py
 from hubmap_entity import HubmapEntity
 
-with HubmapEntity(
-    bearer_token="My Bearer Token",
-) as client:
+with HubmapEntity() as client:
   # make requests here
   ...
 
