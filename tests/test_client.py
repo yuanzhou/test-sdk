@@ -340,6 +340,24 @@ class TestHubmapEntity:
         assert request.headers.get("x-foo") == "stainless"
         assert request.headers.get("x-stainless-lang") == "my-overriding-header"
 
+    def test_validate_headers(self) -> None:
+        client = HubmapEntity(base_url=base_url, bearer_token=bearer_token, _strict_response_validation=True)
+        request = client._build_request(FinalRequestOptions(method="get", url="/foo"))
+        assert request.headers.get("Authorization") == bearer_token
+
+        client2 = HubmapEntity(base_url=base_url, bearer_token=None, _strict_response_validation=True)
+
+        with pytest.raises(
+            TypeError,
+            match="Could not resolve authentication method. Expected the bearer_token to be set. Or for the `Authorization` headers to be explicitly omitted",
+        ):
+            client2._build_request(FinalRequestOptions(method="get", url="/foo"))
+
+        request2 = client2._build_request(
+            FinalRequestOptions(method="get", url="/foo", headers={"Authorization": Omit()})
+        )
+        assert request2.headers.get("Authorization") is None
+
     def test_default_query_option(self) -> None:
         client = HubmapEntity(
             base_url=base_url,
@@ -1113,6 +1131,24 @@ class TestAsyncHubmapEntity:
         request = client2._build_request(FinalRequestOptions(method="get", url="/foo"))
         assert request.headers.get("x-foo") == "stainless"
         assert request.headers.get("x-stainless-lang") == "my-overriding-header"
+
+    def test_validate_headers(self) -> None:
+        client = AsyncHubmapEntity(base_url=base_url, bearer_token=bearer_token, _strict_response_validation=True)
+        request = client._build_request(FinalRequestOptions(method="get", url="/foo"))
+        assert request.headers.get("Authorization") == bearer_token
+
+        client2 = AsyncHubmapEntity(base_url=base_url, bearer_token=None, _strict_response_validation=True)
+
+        with pytest.raises(
+            TypeError,
+            match="Could not resolve authentication method. Expected the bearer_token to be set. Or for the `Authorization` headers to be explicitly omitted",
+        ):
+            client2._build_request(FinalRequestOptions(method="get", url="/foo"))
+
+        request2 = client2._build_request(
+            FinalRequestOptions(method="get", url="/foo", headers={"Authorization": Omit()})
+        )
+        assert request2.headers.get("Authorization") is None
 
     def test_default_query_option(self) -> None:
         client = AsyncHubmapEntity(
