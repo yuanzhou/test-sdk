@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-02-14)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/yuanzhou/test-sdk/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Bug Fixes
+
+* asyncify on non-asyncio runtimes ([#6](https://github.com/yuanzhou/test-sdk/issues/6)) ([62b6b85](https://github.com/yuanzhou/test-sdk/commit/62b6b851735e71d7be90de0c8118d9edd23a5230))
+
 ## 0.1.0-alpha.1 (2025-02-13)
 
 Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/yuanzhou/test-sdk/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)
