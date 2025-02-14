@@ -13,7 +13,6 @@ from ._qs import Querystring
 from ._types import (
     NOT_GIVEN,
     Omit,
-    Headers,
     Timeout,
     NotGiven,
     Transport,
@@ -70,14 +69,10 @@ class HubmapEntity(SyncAPIClient):
     with_streaming_response: HubmapEntityWithStreamedResponse
 
     # client options
-    bearer_token: str | None
-    api_base_url: str | None
 
     def __init__(
         self,
         *,
-        bearer_token: str | None = None,
-        api_base_url: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: Union[float, Timeout, None, NotGiven] = NOT_GIVEN,
         max_retries: int = DEFAULT_MAX_RETRIES,
@@ -98,10 +93,6 @@ class HubmapEntity(SyncAPIClient):
         _strict_response_validation: bool = False,
     ) -> None:
         """Construct a new synchronous hubmap-entity client instance."""
-        self.bearer_token = bearer_token
-
-        self.api_base_url = api_base_url
-
         if base_url is None:
             base_url = os.environ.get("HUBMAP_ENTITY_BASE_URL")
         if base_url is None:
@@ -137,14 +128,6 @@ class HubmapEntity(SyncAPIClient):
 
     @property
     @override
-    def auth_headers(self) -> dict[str, str]:
-        bearer_token = self.bearer_token
-        if bearer_token is None:
-            return {}
-        return {"Authorization": bearer_token}
-
-    @property
-    @override
     def default_headers(self) -> dict[str, str | Omit]:
         return {
             **super().default_headers,
@@ -152,22 +135,9 @@ class HubmapEntity(SyncAPIClient):
             **self._custom_headers,
         }
 
-    @override
-    def _validate_headers(self, headers: Headers, custom_headers: Headers) -> None:
-        if self.bearer_token and headers.get("Authorization"):
-            return
-        if isinstance(custom_headers.get("Authorization"), Omit):
-            return
-
-        raise TypeError(
-            '"Could not resolve authentication method. Expected the bearer_token to be set. Or for the `Authorization` headers to be explicitly omitted"'
-        )
-
     def copy(
         self,
         *,
-        bearer_token: str | None = None,
-        api_base_url: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = NOT_GIVEN,
         http_client: httpx.Client | None = None,
@@ -201,8 +171,6 @@ class HubmapEntity(SyncAPIClient):
 
         http_client = http_client or self._client
         return self.__class__(
-            bearer_token=bearer_token or self.bearer_token,
-            api_base_url=api_base_url or self.api_base_url,
             base_url=base_url or self.base_url,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
             http_client=http_client,
@@ -264,14 +232,10 @@ class AsyncHubmapEntity(AsyncAPIClient):
     with_streaming_response: AsyncHubmapEntityWithStreamedResponse
 
     # client options
-    bearer_token: str | None
-    api_base_url: str | None
 
     def __init__(
         self,
         *,
-        bearer_token: str | None = None,
-        api_base_url: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: Union[float, Timeout, None, NotGiven] = NOT_GIVEN,
         max_retries: int = DEFAULT_MAX_RETRIES,
@@ -292,10 +256,6 @@ class AsyncHubmapEntity(AsyncAPIClient):
         _strict_response_validation: bool = False,
     ) -> None:
         """Construct a new async hubmap-entity client instance."""
-        self.bearer_token = bearer_token
-
-        self.api_base_url = api_base_url
-
         if base_url is None:
             base_url = os.environ.get("HUBMAP_ENTITY_BASE_URL")
         if base_url is None:
@@ -331,14 +291,6 @@ class AsyncHubmapEntity(AsyncAPIClient):
 
     @property
     @override
-    def auth_headers(self) -> dict[str, str]:
-        bearer_token = self.bearer_token
-        if bearer_token is None:
-            return {}
-        return {"Authorization": bearer_token}
-
-    @property
-    @override
     def default_headers(self) -> dict[str, str | Omit]:
         return {
             **super().default_headers,
@@ -346,22 +298,9 @@ class AsyncHubmapEntity(AsyncAPIClient):
             **self._custom_headers,
         }
 
-    @override
-    def _validate_headers(self, headers: Headers, custom_headers: Headers) -> None:
-        if self.bearer_token and headers.get("Authorization"):
-            return
-        if isinstance(custom_headers.get("Authorization"), Omit):
-            return
-
-        raise TypeError(
-            '"Could not resolve authentication method. Expected the bearer_token to be set. Or for the `Authorization` headers to be explicitly omitted"'
-        )
-
     def copy(
         self,
         *,
-        bearer_token: str | None = None,
-        api_base_url: str | None = None,
         base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = NOT_GIVEN,
         http_client: httpx.AsyncClient | None = None,
@@ -395,8 +334,6 @@ class AsyncHubmapEntity(AsyncAPIClient):
 
         http_client = http_client or self._client
         return self.__class__(
-            bearer_token=bearer_token or self.bearer_token,
-            api_base_url=api_base_url or self.api_base_url,
             base_url=base_url or self.base_url,
             timeout=self.timeout if isinstance(timeout, NotGiven) else timeout,
             http_client=http_client,

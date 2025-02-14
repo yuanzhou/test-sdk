@@ -26,9 +26,7 @@ The full API of this library can be found in [api.md](api.md).
 ```python
 from hubmap_entity import HubmapEntity
 
-client = HubmapEntity(
-    bearer_token="My Bearer Token",
-)
+client = HubmapEntity()
 
 entity = client.entities.retrieve(
     "uuid or hubmap_id",
@@ -43,9 +41,7 @@ Simply import `AsyncHubmapEntity` instead of `HubmapEntity` and use `await` with
 import asyncio
 from hubmap_entity import AsyncHubmapEntity
 
-client = AsyncHubmapEntity(
-    bearer_token="My Bearer Token",
-)
+client = AsyncHubmapEntity()
 
 
 async def main() -> None:
