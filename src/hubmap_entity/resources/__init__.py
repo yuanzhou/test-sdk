@@ -16,14 +16,6 @@ from .entities import (
     EntitiesResourceWithStreamingResponse,
     AsyncEntitiesResourceWithStreamingResponse,
 )
-from .redirect_doi import (
-    RedirectDoiResource,
-    AsyncRedirectDoiResource,
-    RedirectDoiResourceWithRawResponse,
-    AsyncRedirectDoiResourceWithRawResponse,
-    RedirectDoiResourceWithStreamingResponse,
-    AsyncRedirectDoiResourceWithStreamingResponse,
-)
 from .retrieve_parents import (
     RetrieveParentsResource,
     AsyncRetrieveParentsResource,
@@ -110,12 +102,6 @@ __all__ = [
     "AsyncRetrieveChildrenResourceWithRawResponse",
     "RetrieveChildrenResourceWithStreamingResponse",
     "AsyncRetrieveChildrenResourceWithStreamingResponse",
-    "RedirectDoiResource",
-    "AsyncRedirectDoiResource",
-    "RedirectDoiResourceWithRawResponse",
-    "AsyncRedirectDoiResourceWithRawResponse",
-    "RedirectDoiResourceWithStreamingResponse",
-    "AsyncRedirectDoiResourceWithStreamingResponse",
     "UpdateUploadsBulkResource",
     "AsyncUpdateUploadsBulkResource",
     "UpdateUploadsBulkResourceWithRawResponse",

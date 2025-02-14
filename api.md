@@ -98,12 +98,6 @@ Methods:
 
 - <code title="get /children/{id}">client.retrieve_children.<a href="./src/hubmap_entity/resources/retrieve_children.py">retrieve_children</a>(id) -> <a href="./src/hubmap_entity/types/retrieve_child_retrieve_children_response.py">RetrieveChildRetrieveChildrenResponse</a></code>
 
-# RedirectDoi
-
-Methods:
-
-- <code title="get /doi/redirect/{id}">client.redirect_doi.<a href="./src/hubmap_entity/resources/redirect_doi.py">redirect_doi</a>(id) -> None</code>
-
 # UpdateUploadsBulk
 
 Types:

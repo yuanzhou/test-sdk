@@ -26,7 +26,6 @@ from ._utils import (
 from ._version import __version__
 from .resources import (
     entities,
-    redirect_doi,
     retrieve_parents,
     list_entity_types,
     retrieve_children,
@@ -62,7 +61,6 @@ class HubmapEntity(SyncAPIClient):
     retrieve_descendants: retrieve_descendants.RetrieveDescendantsResource
     retrieve_parents: retrieve_parents.RetrieveParentsResource
     retrieve_children: retrieve_children.RetrieveChildrenResource
-    redirect_doi: redirect_doi.RedirectDoiResource
     update_uploads_bulk: update_uploads_bulk.UpdateUploadsBulkResource
     datasets: datasets.DatasetsResource
     with_raw_response: HubmapEntityWithRawResponse
@@ -115,7 +113,6 @@ class HubmapEntity(SyncAPIClient):
         self.retrieve_descendants = retrieve_descendants.RetrieveDescendantsResource(self)
         self.retrieve_parents = retrieve_parents.RetrieveParentsResource(self)
         self.retrieve_children = retrieve_children.RetrieveChildrenResource(self)
-        self.redirect_doi = redirect_doi.RedirectDoiResource(self)
         self.update_uploads_bulk = update_uploads_bulk.UpdateUploadsBulkResource(self)
         self.datasets = datasets.DatasetsResource(self)
         self.with_raw_response = HubmapEntityWithRawResponse(self)
@@ -225,7 +222,6 @@ class AsyncHubmapEntity(AsyncAPIClient):
     retrieve_descendants: retrieve_descendants.AsyncRetrieveDescendantsResource
     retrieve_parents: retrieve_parents.AsyncRetrieveParentsResource
     retrieve_children: retrieve_children.AsyncRetrieveChildrenResource
-    redirect_doi: redirect_doi.AsyncRedirectDoiResource
     update_uploads_bulk: update_uploads_bulk.AsyncUpdateUploadsBulkResource
     datasets: datasets.AsyncDatasetsResource
     with_raw_response: AsyncHubmapEntityWithRawResponse
@@ -278,7 +274,6 @@ class AsyncHubmapEntity(AsyncAPIClient):
         self.retrieve_descendants = retrieve_descendants.AsyncRetrieveDescendantsResource(self)
         self.retrieve_parents = retrieve_parents.AsyncRetrieveParentsResource(self)
         self.retrieve_children = retrieve_children.AsyncRetrieveChildrenResource(self)
-        self.redirect_doi = redirect_doi.AsyncRedirectDoiResource(self)
         self.update_uploads_bulk = update_uploads_bulk.AsyncUpdateUploadsBulkResource(self)
         self.datasets = datasets.AsyncDatasetsResource(self)
         self.with_raw_response = AsyncHubmapEntityWithRawResponse(self)
@@ -391,7 +386,6 @@ class HubmapEntityWithRawResponse:
         )
         self.retrieve_parents = retrieve_parents.RetrieveParentsResourceWithRawResponse(client.retrieve_parents)
         self.retrieve_children = retrieve_children.RetrieveChildrenResourceWithRawResponse(client.retrieve_children)
-        self.redirect_doi = redirect_doi.RedirectDoiResourceWithRawResponse(client.redirect_doi)
         self.update_uploads_bulk = update_uploads_bulk.UpdateUploadsBulkResourceWithRawResponse(
             client.update_uploads_bulk
         )
@@ -412,7 +406,6 @@ class AsyncHubmapEntityWithRawResponse:
         self.retrieve_children = retrieve_children.AsyncRetrieveChildrenResourceWithRawResponse(
             client.retrieve_children
         )
-        self.redirect_doi = redirect_doi.AsyncRedirectDoiResourceWithRawResponse(client.redirect_doi)
         self.update_uploads_bulk = update_uploads_bulk.AsyncUpdateUploadsBulkResourceWithRawResponse(
             client.update_uploads_bulk
         )
@@ -435,7 +428,6 @@ class HubmapEntityWithStreamedResponse:
         self.retrieve_children = retrieve_children.RetrieveChildrenResourceWithStreamingResponse(
             client.retrieve_children
         )
-        self.redirect_doi = redirect_doi.RedirectDoiResourceWithStreamingResponse(client.redirect_doi)
         self.update_uploads_bulk = update_uploads_bulk.UpdateUploadsBulkResourceWithStreamingResponse(
             client.update_uploads_bulk
         )
@@ -460,7 +452,6 @@ class AsyncHubmapEntityWithStreamedResponse:
         self.retrieve_children = retrieve_children.AsyncRetrieveChildrenResourceWithStreamingResponse(
             client.retrieve_children
         )
-        self.redirect_doi = redirect_doi.AsyncRedirectDoiResourceWithStreamingResponse(client.redirect_doi)
         self.update_uploads_bulk = update_uploads_bulk.AsyncUpdateUploadsBulkResourceWithStreamingResponse(
             client.update_uploads_bulk
         )
