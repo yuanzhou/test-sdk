@@ -1,4 +1,4 @@
-# Hubmap Entity Python API library
+# HuBMAP Entity Python API library
 
 [![PyPI version](https://img.shields.io/pypi/v/hubmap_entity.svg)](https://pypi.org/project/hubmap_entity/)
 
@@ -28,6 +28,8 @@ from hubmap_entity import HubmapEntity
 
 client = HubmapEntity()
 
+# uuid example: fd8638d080baa2bf40a93381d5e6aa38
+# hubmap_id example: HBM677.JQSL.285
 entity = client.entities.retrieve(
     "uuid or hubmap_id",
 )
