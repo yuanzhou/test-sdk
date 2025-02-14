@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2025-02-14)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/yuanzhou/test-sdk/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Features
+
+* **api:** update via SDK Studio ([#12](https://github.com/yuanzhou/test-sdk/issues/12)) ([0c4a96f](https://github.com/yuanzhou/test-sdk/commit/0c4a96f7c6be128b5c24073341a38fb332a41e71))
+
 ## 0.1.0-alpha.3 (2025-02-14)
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/yuanzhou/test-sdk/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
