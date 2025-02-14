@@ -27,9 +27,8 @@ from ._version import __version__
 from .resources import (
     entities,
     retrieve_parents,
-    list_entity_types,
     retrieve_children,
-    retrieve_ancestors,
+    get_ancestors_by_id,
     update_uploads_bulk,
     retrieve_descendants,
 )
@@ -56,8 +55,7 @@ __all__ = [
 
 class HubmapEntity(SyncAPIClient):
     entities: entities.EntitiesResource
-    list_entity_types: list_entity_types.ListEntityTypesResource
-    retrieve_ancestors: retrieve_ancestors.RetrieveAncestorsResource
+    get_ancestors_by_id: get_ancestors_by_id.GetAncestorsByIDResource
     retrieve_descendants: retrieve_descendants.RetrieveDescendantsResource
     retrieve_parents: retrieve_parents.RetrieveParentsResource
     retrieve_children: retrieve_children.RetrieveChildrenResource
@@ -108,8 +106,7 @@ class HubmapEntity(SyncAPIClient):
         )
 
         self.entities = entities.EntitiesResource(self)
-        self.list_entity_types = list_entity_types.ListEntityTypesResource(self)
-        self.retrieve_ancestors = retrieve_ancestors.RetrieveAncestorsResource(self)
+        self.get_ancestors_by_id = get_ancestors_by_id.GetAncestorsByIDResource(self)
         self.retrieve_descendants = retrieve_descendants.RetrieveDescendantsResource(self)
         self.retrieve_parents = retrieve_parents.RetrieveParentsResource(self)
         self.retrieve_children = retrieve_children.RetrieveChildrenResource(self)
@@ -217,8 +214,7 @@ class HubmapEntity(SyncAPIClient):
 
 class AsyncHubmapEntity(AsyncAPIClient):
     entities: entities.AsyncEntitiesResource
-    list_entity_types: list_entity_types.AsyncListEntityTypesResource
-    retrieve_ancestors: retrieve_ancestors.AsyncRetrieveAncestorsResource
+    get_ancestors_by_id: get_ancestors_by_id.AsyncGetAncestorsByIDResource
     retrieve_descendants: retrieve_descendants.AsyncRetrieveDescendantsResource
     retrieve_parents: retrieve_parents.AsyncRetrieveParentsResource
     retrieve_children: retrieve_children.AsyncRetrieveChildrenResource
@@ -269,8 +265,7 @@ class AsyncHubmapEntity(AsyncAPIClient):
         )
 
         self.entities = entities.AsyncEntitiesResource(self)
-        self.list_entity_types = list_entity_types.AsyncListEntityTypesResource(self)
-        self.retrieve_ancestors = retrieve_ancestors.AsyncRetrieveAncestorsResource(self)
+        self.get_ancestors_by_id = get_ancestors_by_id.AsyncGetAncestorsByIDResource(self)
         self.retrieve_descendants = retrieve_descendants.AsyncRetrieveDescendantsResource(self)
         self.retrieve_parents = retrieve_parents.AsyncRetrieveParentsResource(self)
         self.retrieve_children = retrieve_children.AsyncRetrieveChildrenResource(self)
@@ -379,8 +374,9 @@ class AsyncHubmapEntity(AsyncAPIClient):
 class HubmapEntityWithRawResponse:
     def __init__(self, client: HubmapEntity) -> None:
         self.entities = entities.EntitiesResourceWithRawResponse(client.entities)
-        self.list_entity_types = list_entity_types.ListEntityTypesResourceWithRawResponse(client.list_entity_types)
-        self.retrieve_ancestors = retrieve_ancestors.RetrieveAncestorsResourceWithRawResponse(client.retrieve_ancestors)
+        self.get_ancestors_by_id = get_ancestors_by_id.GetAncestorsByIDResourceWithRawResponse(
+            client.get_ancestors_by_id
+        )
         self.retrieve_descendants = retrieve_descendants.RetrieveDescendantsResourceWithRawResponse(
             client.retrieve_descendants
         )
@@ -395,9 +391,8 @@ class HubmapEntityWithRawResponse:
 class AsyncHubmapEntityWithRawResponse:
     def __init__(self, client: AsyncHubmapEntity) -> None:
         self.entities = entities.AsyncEntitiesResourceWithRawResponse(client.entities)
-        self.list_entity_types = list_entity_types.AsyncListEntityTypesResourceWithRawResponse(client.list_entity_types)
-        self.retrieve_ancestors = retrieve_ancestors.AsyncRetrieveAncestorsResourceWithRawResponse(
-            client.retrieve_ancestors
+        self.get_ancestors_by_id = get_ancestors_by_id.AsyncGetAncestorsByIDResourceWithRawResponse(
+            client.get_ancestors_by_id
         )
         self.retrieve_descendants = retrieve_descendants.AsyncRetrieveDescendantsResourceWithRawResponse(
             client.retrieve_descendants
@@ -415,11 +410,8 @@ class AsyncHubmapEntityWithRawResponse:
 class HubmapEntityWithStreamedResponse:
     def __init__(self, client: HubmapEntity) -> None:
         self.entities = entities.EntitiesResourceWithStreamingResponse(client.entities)
-        self.list_entity_types = list_entity_types.ListEntityTypesResourceWithStreamingResponse(
-            client.list_entity_types
-        )
-        self.retrieve_ancestors = retrieve_ancestors.RetrieveAncestorsResourceWithStreamingResponse(
-            client.retrieve_ancestors
+        self.get_ancestors_by_id = get_ancestors_by_id.GetAncestorsByIDResourceWithStreamingResponse(
+            client.get_ancestors_by_id
         )
         self.retrieve_descendants = retrieve_descendants.RetrieveDescendantsResourceWithStreamingResponse(
             client.retrieve_descendants
@@ -437,11 +429,8 @@ class HubmapEntityWithStreamedResponse:
 class AsyncHubmapEntityWithStreamedResponse:
     def __init__(self, client: AsyncHubmapEntity) -> None:
         self.entities = entities.AsyncEntitiesResourceWithStreamingResponse(client.entities)
-        self.list_entity_types = list_entity_types.AsyncListEntityTypesResourceWithStreamingResponse(
-            client.list_entity_types
-        )
-        self.retrieve_ancestors = retrieve_ancestors.AsyncRetrieveAncestorsResourceWithStreamingResponse(
-            client.retrieve_ancestors
+        self.get_ancestors_by_id = get_ancestors_by_id.AsyncGetAncestorsByIDResourceWithStreamingResponse(
+            client.get_ancestors_by_id
         )
         self.retrieve_descendants = retrieve_descendants.AsyncRetrieveDescendantsResourceWithStreamingResponse(
             client.retrieve_descendants

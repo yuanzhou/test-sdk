@@ -14,32 +14,32 @@ from .._response import (
     async_to_streamed_response_wrapper,
 )
 from .._base_client import make_request_options
-from ..types.retrieve_ancestor_retrieve_ancestors_response import RetrieveAncestorRetrieveAncestorsResponse
+from ..types.get_ancestors_by_id_get_ancestors_by_id_response import GetAncestorsByIDGetAncestorsByIDResponse
 
-__all__ = ["RetrieveAncestorsResource", "AsyncRetrieveAncestorsResource"]
+__all__ = ["GetAncestorsByIDResource", "AsyncGetAncestorsByIDResource"]
 
 
-class RetrieveAncestorsResource(SyncAPIResource):
+class GetAncestorsByIDResource(SyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> RetrieveAncestorsResourceWithRawResponse:
+    def with_raw_response(self) -> GetAncestorsByIDResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/yuanzhou/test-sdk#accessing-raw-response-data-eg-headers
         """
-        return RetrieveAncestorsResourceWithRawResponse(self)
+        return GetAncestorsByIDResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> RetrieveAncestorsResourceWithStreamingResponse:
+    def with_streaming_response(self) -> GetAncestorsByIDResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/yuanzhou/test-sdk#with_streaming_response
         """
-        return RetrieveAncestorsResourceWithStreamingResponse(self)
+        return GetAncestorsByIDResourceWithStreamingResponse(self)
 
-    def retrieve_ancestors(
+    def get_ancestors_by_id(
         self,
         id: str,
         *,
@@ -49,7 +49,7 @@ class RetrieveAncestorsResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> RetrieveAncestorRetrieveAncestorsResponse:
+    ) -> GetAncestorsByIDGetAncestorsByIDResponse:
         """Get the ancestor list for an Entity.
 
         The ancestors are the nodes connected
@@ -72,31 +72,31 @@ class RetrieveAncestorsResource(SyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=RetrieveAncestorRetrieveAncestorsResponse,
+            cast_to=GetAncestorsByIDGetAncestorsByIDResponse,
         )
 
 
-class AsyncRetrieveAncestorsResource(AsyncAPIResource):
+class AsyncGetAncestorsByIDResource(AsyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> AsyncRetrieveAncestorsResourceWithRawResponse:
+    def with_raw_response(self) -> AsyncGetAncestorsByIDResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/yuanzhou/test-sdk#accessing-raw-response-data-eg-headers
         """
-        return AsyncRetrieveAncestorsResourceWithRawResponse(self)
+        return AsyncGetAncestorsByIDResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> AsyncRetrieveAncestorsResourceWithStreamingResponse:
+    def with_streaming_response(self) -> AsyncGetAncestorsByIDResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/yuanzhou/test-sdk#with_streaming_response
         """
-        return AsyncRetrieveAncestorsResourceWithStreamingResponse(self)
+        return AsyncGetAncestorsByIDResourceWithStreamingResponse(self)
 
-    async def retrieve_ancestors(
+    async def get_ancestors_by_id(
         self,
         id: str,
         *,
@@ -106,7 +106,7 @@ class AsyncRetrieveAncestorsResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> RetrieveAncestorRetrieveAncestorsResponse:
+    ) -> GetAncestorsByIDGetAncestorsByIDResponse:
         """Get the ancestor list for an Entity.
 
         The ancestors are the nodes connected
@@ -129,41 +129,41 @@ class AsyncRetrieveAncestorsResource(AsyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=RetrieveAncestorRetrieveAncestorsResponse,
+            cast_to=GetAncestorsByIDGetAncestorsByIDResponse,
         )
 
 
-class RetrieveAncestorsResourceWithRawResponse:
-    def __init__(self, retrieve_ancestors: RetrieveAncestorsResource) -> None:
-        self._retrieve_ancestors = retrieve_ancestors
+class GetAncestorsByIDResourceWithRawResponse:
+    def __init__(self, get_ancestors_by_id: GetAncestorsByIDResource) -> None:
+        self._get_ancestors_by_id = get_ancestors_by_id
 
-        self.retrieve_ancestors = to_raw_response_wrapper(
-            retrieve_ancestors.retrieve_ancestors,
+        self.get_ancestors_by_id = to_raw_response_wrapper(
+            get_ancestors_by_id.get_ancestors_by_id,
         )
 
 
-class AsyncRetrieveAncestorsResourceWithRawResponse:
-    def __init__(self, retrieve_ancestors: AsyncRetrieveAncestorsResource) -> None:
-        self._retrieve_ancestors = retrieve_ancestors
+class AsyncGetAncestorsByIDResourceWithRawResponse:
+    def __init__(self, get_ancestors_by_id: AsyncGetAncestorsByIDResource) -> None:
+        self._get_ancestors_by_id = get_ancestors_by_id
 
-        self.retrieve_ancestors = async_to_raw_response_wrapper(
-            retrieve_ancestors.retrieve_ancestors,
+        self.get_ancestors_by_id = async_to_raw_response_wrapper(
+            get_ancestors_by_id.get_ancestors_by_id,
         )
 
 
-class RetrieveAncestorsResourceWithStreamingResponse:
-    def __init__(self, retrieve_ancestors: RetrieveAncestorsResource) -> None:
-        self._retrieve_ancestors = retrieve_ancestors
+class GetAncestorsByIDResourceWithStreamingResponse:
+    def __init__(self, get_ancestors_by_id: GetAncestorsByIDResource) -> None:
+        self._get_ancestors_by_id = get_ancestors_by_id
 
-        self.retrieve_ancestors = to_streamed_response_wrapper(
-            retrieve_ancestors.retrieve_ancestors,
+        self.get_ancestors_by_id = to_streamed_response_wrapper(
+            get_ancestors_by_id.get_ancestors_by_id,
         )
 
 
-class AsyncRetrieveAncestorsResourceWithStreamingResponse:
-    def __init__(self, retrieve_ancestors: AsyncRetrieveAncestorsResource) -> None:
-        self._retrieve_ancestors = retrieve_ancestors
+class AsyncGetAncestorsByIDResourceWithStreamingResponse:
+    def __init__(self, get_ancestors_by_id: AsyncGetAncestorsByIDResource) -> None:
+        self._get_ancestors_by_id = get_ancestors_by_id
 
-        self.retrieve_ancestors = async_to_streamed_response_wrapper(
-            retrieve_ancestors.retrieve_ancestors,
+        self.get_ancestors_by_id = async_to_streamed_response_wrapper(
+            get_ancestors_by_id.get_ancestors_by_id,
         )
