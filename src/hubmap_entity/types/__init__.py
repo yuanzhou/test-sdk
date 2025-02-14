@@ -50,14 +50,11 @@ from .retrieve_child_retrieve_children_response import (
 from .retrieve_parent_retrieve_parents_response import (
     RetrieveParentRetrieveParentsResponse as RetrieveParentRetrieveParentsResponse,
 )
-from .list_entity_type_list_entity_types_response import (
-    ListEntityTypeListEntityTypesResponse as ListEntityTypeListEntityTypesResponse,
-)
-from .retrieve_ancestor_retrieve_ancestors_response import (
-    RetrieveAncestorRetrieveAncestorsResponse as RetrieveAncestorRetrieveAncestorsResponse,
-)
 from .update_uploads_bulk_update_uploads_bulk_params import (
     UpdateUploadsBulkUpdateUploadsBulkParams as UpdateUploadsBulkUpdateUploadsBulkParams,
+)
+from .get_ancestors_by_id_get_ancestors_by_id_response import (
+    GetAncestorsByIDGetAncestorsByIDResponse as GetAncestorsByIDGetAncestorsByIDResponse,
 )
 from .update_uploads_bulk_update_uploads_bulk_response import (
     UpdateUploadsBulkUpdateUploadsBulkResponse as UpdateUploadsBulkUpdateUploadsBulkResponse,

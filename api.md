@@ -38,29 +38,17 @@ Methods:
 - <code title="get /entities/{id}/globus-url">client.entities.<a href="./src/hubmap_entity/resources/entities.py">retrieve_globus_url</a>(id) -> str</code>
 - <code title="get /entities/{id}/provenance">client.entities.<a href="./src/hubmap_entity/resources/entities.py">retrieve_provenance</a>(id) -> None</code>
 
-# ListEntityTypes
+# GetAncestorsByID
 
 Types:
 
 ```python
-from hubmap_entity.types import ListEntityTypeListEntityTypesResponse
+from hubmap_entity.types import GetAncestorsByIDGetAncestorsByIDResponse
 ```
 
 Methods:
 
-- <code title="get /entity-types">client.list_entity_types.<a href="./src/hubmap_entity/resources/list_entity_types.py">list_entity_types</a>() -> <a href="./src/hubmap_entity/types/list_entity_type_list_entity_types_response.py">ListEntityTypeListEntityTypesResponse</a></code>
-
-# RetrieveAncestors
-
-Types:
-
-```python
-from hubmap_entity.types import RetrieveAncestorRetrieveAncestorsResponse
-```
-
-Methods:
-
-- <code title="get /ancestors/{id}">client.retrieve_ancestors.<a href="./src/hubmap_entity/resources/retrieve_ancestors.py">retrieve_ancestors</a>(id) -> <a href="./src/hubmap_entity/types/retrieve_ancestor_retrieve_ancestors_response.py">RetrieveAncestorRetrieveAncestorsResponse</a></code>
+- <code title="get /ancestors/{id}">client.get_ancestors_by_id.<a href="./src/hubmap_entity/resources/get_ancestors_by_id.py">get_ancestors_by_id</a>(id) -> <a href="./src/hubmap_entity/types/get_ancestors_by_id_get_ancestors_by_id_response.py">GetAncestorsByIDGetAncestorsByIDResponse</a></code>
 
 # RetrieveDescendants
 

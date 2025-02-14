@@ -24,14 +24,6 @@ from .retrieve_parents import (
     RetrieveParentsResourceWithStreamingResponse,
     AsyncRetrieveParentsResourceWithStreamingResponse,
 )
-from .list_entity_types import (
-    ListEntityTypesResource,
-    AsyncListEntityTypesResource,
-    ListEntityTypesResourceWithRawResponse,
-    AsyncListEntityTypesResourceWithRawResponse,
-    ListEntityTypesResourceWithStreamingResponse,
-    AsyncListEntityTypesResourceWithStreamingResponse,
-)
 from .retrieve_children import (
     RetrieveChildrenResource,
     AsyncRetrieveChildrenResource,
@@ -40,13 +32,13 @@ from .retrieve_children import (
     RetrieveChildrenResourceWithStreamingResponse,
     AsyncRetrieveChildrenResourceWithStreamingResponse,
 )
-from .retrieve_ancestors import (
-    RetrieveAncestorsResource,
-    AsyncRetrieveAncestorsResource,
-    RetrieveAncestorsResourceWithRawResponse,
-    AsyncRetrieveAncestorsResourceWithRawResponse,
-    RetrieveAncestorsResourceWithStreamingResponse,
-    AsyncRetrieveAncestorsResourceWithStreamingResponse,
+from .get_ancestors_by_id import (
+    GetAncestorsByIDResource,
+    AsyncGetAncestorsByIDResource,
+    GetAncestorsByIDResourceWithRawResponse,
+    AsyncGetAncestorsByIDResourceWithRawResponse,
+    GetAncestorsByIDResourceWithStreamingResponse,
+    AsyncGetAncestorsByIDResourceWithStreamingResponse,
 )
 from .update_uploads_bulk import (
     UpdateUploadsBulkResource,
@@ -72,18 +64,12 @@ __all__ = [
     "AsyncEntitiesResourceWithRawResponse",
     "EntitiesResourceWithStreamingResponse",
     "AsyncEntitiesResourceWithStreamingResponse",
-    "ListEntityTypesResource",
-    "AsyncListEntityTypesResource",
-    "ListEntityTypesResourceWithRawResponse",
-    "AsyncListEntityTypesResourceWithRawResponse",
-    "ListEntityTypesResourceWithStreamingResponse",
-    "AsyncListEntityTypesResourceWithStreamingResponse",
-    "RetrieveAncestorsResource",
-    "AsyncRetrieveAncestorsResource",
-    "RetrieveAncestorsResourceWithRawResponse",
-    "AsyncRetrieveAncestorsResourceWithRawResponse",
-    "RetrieveAncestorsResourceWithStreamingResponse",
-    "AsyncRetrieveAncestorsResourceWithStreamingResponse",
+    "GetAncestorsByIDResource",
+    "AsyncGetAncestorsByIDResource",
+    "GetAncestorsByIDResourceWithRawResponse",
+    "AsyncGetAncestorsByIDResourceWithRawResponse",
+    "GetAncestorsByIDResourceWithStreamingResponse",
+    "AsyncGetAncestorsByIDResourceWithStreamingResponse",
     "RetrieveDescendantsResource",
     "AsyncRetrieveDescendantsResource",
     "RetrieveDescendantsResourceWithRawResponse",
