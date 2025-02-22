@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-02-22)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/yuanzhou/test-sdk/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Features
+
+* **client:** allow passing `NotGiven` for body ([#21](https://github.com/yuanzhou/test-sdk/issues/21)) ([13189db](https://github.com/yuanzhou/test-sdk/commit/13189dba5065b83f178704f6d4359ca5a9cb9e1a))
+
+
+### Bug Fixes
+
+* **client:** mark some request bodies as optional ([13189db](https://github.com/yuanzhou/test-sdk/commit/13189dba5065b83f178704f6d4359ca5a9cb9e1a))
+
+
+### Chores
+
+* **internal:** fix devcontainers setup ([#23](https://github.com/yuanzhou/test-sdk/issues/23)) ([6bce5f7](https://github.com/yuanzhou/test-sdk/commit/6bce5f792ed78cd51a202963ca76d35e53c05790))
+
 ## 0.1.0-alpha.6 (2025-02-14)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/yuanzhou/test-sdk/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
