@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2025-02-26)
+
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/yuanzhou/test-sdk/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
+
+### Chores
+
+* **internal:** properly set __pydantic_private__ ([#25](https://github.com/yuanzhou/test-sdk/issues/25)) ([335229e](https://github.com/yuanzhou/test-sdk/commit/335229e16fd1baa1e3f30b12b27ae7586ac2c2bf))
+
 ## 0.1.0-alpha.7 (2025-02-22)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/yuanzhou/test-sdk/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
